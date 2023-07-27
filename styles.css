@@ -1,7 +1,7 @@
 /* Initial CSS */
 body {
   font-family: ”Open Sans”, sans-serif;
-  height: 99dvh;
+  height: 85dvh;
   margin: 0;
 }
 
@@ -142,6 +142,10 @@ main {
 }
 
 @media (min-width: 426px) {
+  body {
+    height: 99dvh;
+  }
+
   main {
     width: 60dvw;
   }
