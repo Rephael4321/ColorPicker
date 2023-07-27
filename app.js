@@ -3,9 +3,6 @@ let isDown = false;
 let startY;
 let initTop = 400 - 24;
 let dragPos = initTop;
-const body = document.querySelector("body");
-const handle = document.querySelector(".drag-handle");
-handle.style.top = `${initTop}px`;
 
 // Constant colors for color-bar
 const colors = [
@@ -56,6 +53,8 @@ const colorsLerpValues = [
     [238, 130, 238],
   ],
 ];
+
+// Color display vars
 let colorsLerpIndex = 0;
 let currentColor = getColorRGB(
   dragPos,
@@ -63,11 +62,8 @@ let currentColor = getColorRGB(
   colorsLerpValues[colorsLerpIndex][1]
 );
 
-// Query color bar and buttons
-const colorButtons = document.querySelectorAll(".color-btn");
-const colorBar = document.querySelector(".color-bar");
-
 // Append event listener for each color button
+const colorButtons = document.querySelectorAll(".color-btn");
 for (let i = 0; i < 7; i++) {
   colorButtons[i].addEventListener("click", () => {
     colorBar.style.backgroundColor = colors[i];
@@ -83,10 +79,12 @@ for (let i = 0; i < 7; i++) {
   });
 }
 
-// Query color indicators elements
+// Query elements
+const body = document.querySelector("body");
+const colorBar = document.querySelector(".color-bar");
+const handle = document.querySelector(".drag-handle");
 const colorDisplay = document.querySelector(".color-display");
 const colorRGB = document.querySelector(".color-rgb");
-colorRGB.textContent = `rgb(0, 0, 0)`;
 
 // When finish dragging
 const end = () => {
@@ -137,6 +135,7 @@ body.addEventListener("mouseup", end);
 body.addEventListener("mouseleave", end);
 handle.addEventListener("touchend", end);
 
+// Color and lerp functions
 function getColorRGB(i, firstRGB, secondRGB) {
   if (i > 360) {
     return [0, 0, 0];
