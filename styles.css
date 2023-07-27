@@ -17,7 +17,7 @@ body:active {
 
 main {
   text-align: center;
-  width: 60dvw;
+  width: 95dvw;
   margin: 1dvh auto;
   padding: 10px;
   border: 1px gray solid;
@@ -28,23 +28,21 @@ main {
 .container {
   display: flex;
   flex-direction: row;
-  width: 40dvw;
-  margin: auto;
+  margin-left: 20px;
 }
 
 .color-picker {
   display: flex;
-  width: 550px;
-  margin: 0 auto;
   align-items: center;
+  margin-right: 10px;
 }
 
 /* Color buttons */
 .color-btn {
   color: black;
   display: block;
-  width: 150px;
-  height: 50px;
+  width: 100px;
+  height: 40px;
   text-align: center;
   border: 1px solid gray;
   border-radius: 5px;
@@ -52,7 +50,7 @@ main {
 }
 
 .color-btn:not(:last-of-type) {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .red-btn {
@@ -88,12 +86,13 @@ main {
 .color-name {
   color: inherit;
   background-color: inherit;
-  font-size: 1.5rem;
+  font-size: 1rem;
   display: block;
-  width: 100px;
+  width: 50px;
   margin: 10px auto;
 }
 
+/* Color bar and its handle */
 .color-bar {
   position: relative;
   width: 20px;
@@ -109,7 +108,6 @@ main {
   border-radius: 50px;
 }
 
-/* Color bar and its handle */
 .drag-handle {
   position: absolute;
   background-color: white;
@@ -127,14 +125,60 @@ main {
 }
 
 /* Color Display */
+.color-picked {
+  width: 20dvw;
+}
+
 .color-display {
-  width: 10dvw;
-  height: 10dvw;
+  width: 30dvw;
+  height: 30dvw;
   background-color: black;
-  margin: 0 auto 10px;
+  margin: 20px 0 15px 20px;
 }
 
 .color-rgb {
-  width: 200px;
+  width: 132px;
   height: 24px;
+}
+
+@media (min-width: 426px) {
+  main {
+    width: 60dvw;
+  }
+
+  .container {
+    width: 40dvw;
+    margin: auto;
+  }
+
+  .color-picker {
+    width: 550px;
+    margin: 0 auto;
+  }
+
+  .color-btn {
+    width: 150px;
+    height: 50px;
+  }
+
+  .color-btn:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+
+  .color-name {
+    font-size: 1.5rem;
+    width: 100px;
+    height: 35px;
+    margin: 12px auto 0;
+  }
+
+  .color-display {
+    width: 10dvw;
+    height: 10dvw;
+    margin: 0 auto 10px;
+  }
+
+  .color-rgb {
+    width: 200px;
+  }
 }
